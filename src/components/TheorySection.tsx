@@ -155,7 +155,7 @@ export function TheorySection() {
       content: (
         <div className="space-y-3">
           <p className="text-gray-300 leading-relaxed text-sm">
-            O estudo desenvolvido por <strong>Caio Henrique Vaz e Vagner Gomes Filho</strong> demonstra a persistência do Error Level Analysis como ferramenta prévia inestimável de triagem e inteligência forense digital.
+            Esta plataforma de análise demonstra o poder e a persistência do Error Level Analysis como ferramenta prévia inestimável de triagem e inteligência forense digital de alto nível.
           </p>
           <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-3.5 text-xs text-slate-300 space-y-2">
             <span className="font-semibold text-slate-200 block text-indigo-300 tracking-wider">Diretrizes de Trabalhos Futuros:</span>
@@ -186,8 +186,8 @@ export function TheorySection() {
           <BookOpen className="w-5 h-5 text-indigo-400" />
         </div>
         <div>
-          <h2 className="text-lg font-semibold text-white tracking-tight leading-none mb-1">Fundamentos Acadêmicos da Pesquisa</h2>
-          <span className="text-xs text-gray-400">Referenciais e embasamentos teóricos extraídos da apresentação original</span>
+          <h2 className="text-lg font-semibold text-white tracking-tight leading-none mb-1">Fundamentos Forenses &amp; Metodologia</h2>
+          <span className="text-xs text-gray-400">Referenciais teóricos e padrões de detecção do Error Level Analysis</span>
         </div>
       </div>
 
@@ -225,7 +225,7 @@ export function TheorySection() {
           </div>
 
           <div className="pt-4 border-t border-slate-900/80 flex items-center justify-between text-[11px] text-gray-500">
-            <span>Processamento de Imagens • Caio Henrique Vaz & Vagner Gomes Filho</span>
+            <span>Manual do Usuário • Analisador Forense ELA</span>
             <span>Slide {activeSlide + 1} de {slides.length}</span>
           </div>
         </div>

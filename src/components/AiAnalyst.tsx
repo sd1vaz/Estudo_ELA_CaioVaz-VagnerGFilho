@@ -52,9 +52,9 @@ export function AiAnalyst({ imageBase64, quality, boost, stats }: AiAnalystProps
         doc.setTextColor(245, 247, 250);
         doc.setFont("helvetica", "bold");
         doc.setFontSize(26);
-        // Draw centered academic watermark
-        doc.text("ESTUDO CIENTÍFICO ACADÊMICO", pageWidth / 2, pageHeight / 2 - 20, { align: "center", angle: 45 });
-        doc.text("FORENSE QUANT ELA", pageWidth / 2, pageHeight / 2 + 10, { align: "center", angle: 45 });
+        // Draw centered official watermark
+        doc.text("DOCUMENTO OFICIAL DE PERÍCIA", pageWidth / 2, pageHeight / 2 - 20, { align: "center", angle: 45 });
+        doc.text("LAUDO DIGITAL CERTIFICADO ELA", pageWidth / 2, pageHeight / 2 + 10, { align: "center", angle: 45 });
 
         // Custom top Header Header Bar
         doc.setDrawColor(99, 102, 241); // indigo-500
@@ -68,7 +68,7 @@ export function AiAnalyst({ imageBase64, quality, boost, stats }: AiAnalystProps
 
         doc.setFont("helvetica", "normal");
         doc.setTextColor(148, 163, 184);
-        doc.text("Caio H. Vaz & Vagner G. Filho - Forensics", pageWidth - margin, margin, { align: "right" });
+        doc.text("Forensix ELA - Investigação Computacional", pageWidth - margin, margin, { align: "right" });
 
         // Bottom Footer line
         doc.setDrawColor(226, 232, 240);
@@ -136,7 +136,7 @@ export function AiAnalyst({ imageBase64, quality, boost, stats }: AiAnalystProps
       drawMetaText("AMPLIFICAÇÃO (BOOST):", `${boost}x`, margin + 4, currentY + 18);
       drawMetaText("VEREDITO DIGITAL:", verdictStr, margin + contentWidth / 2 + 2, currentY + 18);
 
-      drawMetaText("ESTUDO CIENTÍFICO:", "Caio Vaz & Vagner G. Filho", margin + 4, currentY + 24);
+      drawMetaText("SISTEMA GERADOR:", "Forensix Suite Enterprise", margin + 4, currentY + 24);
       drawMetaText("FILTRO UTILIZADO:", "Canal de Nível de Erro Ativo", margin + contentWidth / 2 + 2, currentY + 24);
 
       currentY += 36;
@@ -286,7 +286,7 @@ export function AiAnalyst({ imageBase64, quality, boost, stats }: AiAnalystProps
       doc.text("VERIFICAÇÃO DIGITAL ATIVA", margin + 4, currentY + 5);
       doc.setFont("helvetica", "normal");
       doc.setFontSize(7);
-      doc.text("Documento emitido eletronicamente de forma exclusiva pelo simulador de perícia de Caio Henrique Vaz & Vagner Gomes Filho.", margin + 4, currentY + 9);
+      doc.text("Documento emitido eletronicamente de forma exclusiva por sistema de análise avançada Forensix ELA Suite.", margin + 4, currentY + 9);
 
       doc.save(`LAUDO_FORENSE_ELA_${new Date().toISOString().slice(0, 10)}.pdf`);
     } catch (err) {
@@ -303,12 +303,12 @@ export function AiAnalyst({ imageBase64, quality, boost, stats }: AiAnalystProps
 =============================================================================
 Data de Emissão: ${new Date().toLocaleString("pt-BR")}
 Metodologia Utilizada: Error Level Analysis (ELA) - Nível de Erro de Compressão
-Parâmetros do Experimento:
+Parâmetros Analíticos:
 - Fator de Recompressão (Q): ${Math.round(quality * 100)}%
 - Fator de Amplificação (Boost): ${boost}x
 - Veredito da Análise Estrutural: ${stats?.integrityVerdict || "NÃO CONFIGURADO"}
 - Grau de Anomalia Computada: ${stats?.anomalyScore ? stats.anomalyScore + "/100" : "Verificar mapa ELA"}
-- Autores Científicos: Caio Henrique Vaz e Vagner Gomes Filho
+- Emissão: Automatizada (Algoritmo Forensix ELA Suite)
 =============================================================================
 
 REDAÇÃO PERICIAL RECOMPILADA:
@@ -346,7 +346,7 @@ Assinado eletronicamente sob integridade de quantização ELA.
         body: JSON.stringify({
           imageBase64,
           mimeType: "image/jpeg",
-          notes: notes || "Solicitando revisão geral do experimento de nível de erro (ELA).",
+          notes: notes || "Solicitando revisão geral da análise de nível de erro (ELA).",
           quality: Math.round(quality * 100),
           boost: boost,
         }),
@@ -383,7 +383,7 @@ Aqui está o laudo pericial gerado anteriormente para esta imagem:
 ${report}
 ---
 
-O usuário quer fazer uma pergunta complementar sobre este laudo ou o experimento.
+O usuário quer fazer uma pergunta complementar sobre este laudo ou a imagem analisada.
 Pergunta do Usuário: "${userMessage}"
 
 Por favor, responda de forma breve, muito profissional, técnica e objetiva em português.`;
@@ -522,7 +522,7 @@ Por favor, responda de forma breve, muito profissional, técnica e objetiva em p
         ) : !report ? (
           <div className="space-y-4">
             <div className="bg-slate-950/40 border border-slate-900 rounded-xl p-3">
-              <label className="text-[10px] font-semibold text-indigo-400 uppercase tracking-wider block mb-1">Observações do Experimento (Opcional)</label>
+              <label className="text-[10px] font-semibold text-indigo-400 uppercase tracking-wider block mb-1">Observações Adicionais / Caso de Investigação (Opcional)</label>
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}

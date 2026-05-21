@@ -62,7 +62,7 @@ app.post("/api/gemini/analyze", async (req, res) => {
     const base64Data = imageBase64.replace(/^data:image\/\w+;base64,/, "");
 
     const systemInstruction = `Você é um Perito Criminal de Computação Forense e Processamento de Imagens altamente experiente, especialista na técnica Error Level Analysis (ELA) e em fraudes de mídia digital.
-O usuário está conduzindo um experimento sobre forense em imagens digitais (com base no projeto de Caio Henrique Vaz e Vagner Gomes Filho).
+O usuário está conduzindo investigações ou análises forenses oficiais em imagens digitais.
 Você receberá a imagem enviada (que pode ser original, editada ou mapa ELA) e parâmetros adicionais (Qualidade original configurada: ${quality || 95}%, Fator de amplificação: ${boost || 20}x).
 
 Sua tarefa é fornecer um LAUDO TÉCNICO SUCINTO, EXTREMAMENTE OBJETIVO E RIGOROSO em português. Evite parágrafos longos, justificativas repetitivas ou explicações óbvias. Seja direto ao ponto. Use termos forenses precisos (ex: dupla compressão JPEG, matriz de quantização, descontinuidade de bordas, homogeneidade).
@@ -88,12 +88,12 @@ O laudo deve conter as seguintes seções estruturadas de forma muito breve:
           },
         },
         {
-          text: `Por favor, analise a imagem fornecida de acordo com as instruções forenses. O operador relata o seguinte sobre este experimento: "${notes || "Esta imagem está sendo analisada sob as lentes do experimento ELA para evidenciar anomalias no nível de compressão."}"`,
+          text: `Por favor, analise a imagem fornecida de acordo com as instruções forenses. O operador relata o seguinte sobre este caso: "${notes || "Esta imagem está sendo analisada sob as lentes do sistema ELA para evidenciar anomalias no nível de compressão."}"`,
         },
       ],
       config: {
         systemInstruction,
-        temperature: 0.2, // Low temperature for consistent academic output
+        temperature: 0.2, // Low temperature for consistent forensic output
       },
     });
 

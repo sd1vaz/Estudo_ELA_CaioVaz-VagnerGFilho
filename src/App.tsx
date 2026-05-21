@@ -220,12 +220,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex items-center gap-3">
             <div className="bg-indigo-600/10 border border-indigo-500/20 p-2.5 rounded-xl text-indigo-400">
-              <GraduationCap className="w-5 h-5 animate-pulse" />
+              <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-sm font-bold tracking-tight text-white uppercase">Forensix ELA Suite</h1>
-                <span className="bg-indigo-500/15 border border-indigo-500/30 text-[9px] font-mono text-indigo-400 px-1.5 py-0.5 rounded uppercase">v1.1 Academic</span>
+                <span className="bg-indigo-500/15 border border-indigo-500/30 text-[9px] font-mono text-indigo-400 px-1.5 py-0.5 rounded uppercase">v1.1 Pro</span>
               </div>
               <p className="text-xs text-gray-400">
                 Detecção Forense de Manipulações Digitais utilizando <span className="text-indigo-400 font-semibold font-mono">Error Level Analysis (ELA)</span>
@@ -234,10 +234,8 @@ export default function App() {
           </div>
 
           <div className="flex flex-col md:items-end text-xs text-gray-500 font-mono">
-            <div>
-              Autores: <strong className="text-gray-300">Caio Henrique Vaz</strong> &amp; <strong className="text-gray-300">Vagner Gomes Filho</strong>
-            </div>
-            <div className="text-[10px] text-gray-600">Projeto de Pesquisa • Processamento Avançado de Imagens</div>
+            <div className="text-indigo-400 font-semibold">INVESTIGAÇÃO DIGITAL • ATIVA</div>
+            <div className="text-[10px] text-gray-600">Processamento Avançado e Detecção Forense</div>
           </div>
         </div>
       </header>
@@ -267,7 +265,7 @@ export default function App() {
             }`}
           >
             <Info className="w-3.5 h-3.5" />
-            Fundamentos & Artigo Científico
+            Guia &amp; Metodologia Forense
           </button>
         </div>
 
@@ -286,64 +284,6 @@ export default function App() {
               {/* COL 1: CONTROL CENTER & PRESETS SELECTOR */}
               <div className="lg:col-span-3 space-y-6">
                 
-                {/* 1. Base Experimental Presets */}
-                <div className="bg-slate-900/20 border border-slate-900/60 rounded-2xl p-4.5 space-y-3">
-                  <h3 className="text-xs font-semibold text-gray-300 uppercase tracking-wider flex items-center gap-1.5 mb-2.5">
-                    <History className="w-3.5 h-3.5 text-indigo-400" />
-                    Base Experimental (Slide 8)
-                  </h3>
-                  
-                  <div className="grid grid-cols-1 gap-2">
-                    <button
-                      id="preset-original"
-                      onClick={() => setSelectedPreset("original")}
-                      className={`flex flex-col text-left p-2.5 rounded-xl border text-xs transition-all cursor-pointer ${
-                        selectedPreset === "original"
-                          ? "bg-indigo-950/40 border-indigo-500/40 text-white shadow-sm"
-                          : "bg-slate-950/20 border-slate-900 hover:border-slate-800 text-slate-400 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between font-semibold">
-                        <span>Teste 1: Foto Original</span>
-                        <span className="text-[8px] bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-1 py-0.2 rounded font-mono uppercase">Inalterado</span>
-                      </div>
-                      <span className="text-[10px] text-gray-500 mt-0.5">Compressão homogênea, sem ruído discrepante de bordas.</span>
-                    </button>
-
-                    <button
-                      id="preset-edited"
-                      onClick={() => setSelectedPreset("edited")}
-                      className={`flex flex-col text-left p-2.5 rounded-xl border text-xs transition-all cursor-pointer ${
-                        selectedPreset === "edited"
-                          ? "bg-indigo-950/40 border-indigo-500/40 text-white shadow-sm"
-                          : "bg-slate-950/20 border-slate-900 hover:border-slate-800 text-slate-400 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between font-semibold">
-                        <span>Teste 2: Inserção Direta</span>
-                        <span className="text-[8px] bg-amber-500/10 border border-amber-500/30 text-amber-400 px-1 py-0.2 rounded font-mono uppercase">Adulterado</span>
-                      </div>
-                      <span className="text-[10px] text-gray-500 mt-0.5">Objeto externo colado pós-compressão gera alto nível luminoso.</span>
-                    </button>
-
-                    <button
-                      id="preset-deepfake"
-                      onClick={() => setSelectedPreset("deepfake")}
-                      className={`flex flex-col text-left p-2.5 rounded-xl border text-xs transition-all cursor-pointer ${
-                        selectedPreset === "deepfake"
-                          ? "bg-indigo-950/40 border-indigo-500/40 text-white shadow-sm"
-                          : "bg-slate-950/20 border-slate-900 hover:border-slate-800 text-slate-400 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between font-semibold">
-                        <span>Teste 3: Montagem/Swap</span>
-                        <span className="text-[8px] bg-rose-500/10 border border-rose-500/30 text-rose-400 px-1 py-0.2 rounded font-mono uppercase">Inconsistência</span>
-                      </div>
-                      <span className="text-[10px] text-gray-500 mt-0.5">Alteração facial seletiva rompe o alinhamento de quantização.</span>
-                    </button>
-                  </div>
-                </div>
-
                 {/* 2. Upload Custom Image */}
                 <div className="bg-slate-900/20 border border-slate-900/60 rounded-2xl p-4.5 space-y-3">
                   <h3 className="text-xs font-semibold text-gray-300 uppercase tracking-wider flex items-center gap-1.5">
@@ -666,13 +606,10 @@ export default function App() {
 
       </main>
 
-      {/* Aesthetic Academic Footer */}
-      <footer className="border-t border-slate-900 py-6 mt-12 bg-slate-950/40 text-center text-xs text-gray-500 font-mono">
+      {/* Elegant Professional Footer */}
+      <footer className="border-t border-slate-900 py-6 mt-12 bg-slate-950/40 text-center text-xs text-slate-500 font-mono">
         <div className="max-w-7xl mx-auto px-6 space-y-2">
-          <p>© 2026 Forensix ELA • Sistema desenvolvido para o experimento de Processamento de Imagens</p>
-          <p className="text-gray-600 text-[10px]">
-            Candidato de Pesquisa: Caio Henrique Vaz (Matrícula: 00113577) &amp; Vagner Gomes Filho (Matrícula: 00057178)
-          </p>
+          <p>© 2026 Forensix ELA • Sistema de Investigação Forense Digital Avançado</p>
         </div>
       </footer>
     </div>
