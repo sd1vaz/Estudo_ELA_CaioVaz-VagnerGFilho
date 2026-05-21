@@ -1,0 +1,8 @@
+{
+  "name": "Detecção Forense ELA",
+  "description": "Sistema de detecção de manipulações em imagens digitais através da análise de nível de erro (Error Level Analysis - ELA) e inteligência artificial forense.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
